@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Rental UI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">🚗 RentACar</a>
+  </div>
+</nav>
+
+<!-- Filter & Date Section -->
+<section class="bg-light p-4 text-center">
+  <h1>Find Your Ride</h1>
+  <p>Select date range and filter by car type</p>
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <input type="date" id="start-date" class="form-control" placeholder="Start Date">
+      </div>
+      <div class="col-md-4">
+        <input type="date" id="end-date" class="form-control" placeholder="End Date">
+      </div>
+      <div class="col-md-4">
+        <select class="form-select" id="car-type-filter">
+          <option value="All">All Types</option>
+          <option value="SUV">SUV</option>
+          <option value="Sedan">Sedan</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Car Cards Section -->
+<section class="container my-5" id="car-list">
+  <div class="row g-4">
+    <!-- Sedan Cars -->
+    <div class="col-md-4 car-card" data-type="Sedan" data-price="2200">
+      <div class="card h-100">
+        <img src="city.jpeg" class="card-img-top" alt="Honda City">
+        <div class="card-body">
+          <h5 class="card-title">Honda City (Sedan)</h5>
+          <p>₹2200 per day</p>
+          <button class="btn btn-success book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 car-card" data-type="Sedan" data-price="2000">
+      <div class="card h-100">
+        <img src="verna.jpeg" class="card-img-top" alt="Verna">
+        <div class="card-body">
+          <h5 class="card-title">Verna (Sedan)</h5>
+          <p>₹2000 per day</p>
+          <button class="btn btn-success book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 car-card" data-type="Sedan" data-price="1600">
+      <div class="card h-100">
+        <img src="dezire.jpeg" class="card-img-top" alt="Dezire">
+        <div class="card-body">
+          <h5 class="card-title">Dezire (Sedan)</h5>
+          <p>₹1600 per day</p>
+          <button class="btn btn-success book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUV Cars -->
+    <div class="col-md-4 car-card" data-type="SUV" data-price="3000">
+      <div class="card h-100">
+        <img src="fortuner.jpeg" class="card-img-top" alt="Toyota Fortuner">
+        <div class="card-body">
+          <h5 class="card-title">Toyota Fortuner (SUV)</h5>
+          <p>₹3000 per day</p>
+          <button class="btn btn-success book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 car-card" data-type="SUV" data-price="2600">
+      <div class="card h-100">
+        <img src="venue.jpeg" class="card-img-top" alt="Venue">
+        <div class="card-body">
+          <h5 class="card-title">Venue (SUV)</h5>
+          <p>₹2600 per day</p>
+          <button class="btn btn-success book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 car-card" data-type="SUV" data-price="2500">
+      <div class="card h-100">
+        <img src="brezza.jpeg" class="card-img-top" alt="Brezza">
+        <div class="card-body">
+          <h5 class="card-title">Brezza (SUV)</h5>
+          <p>₹2500 per day</p>
+          <button class="btn btn-success book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="bookingForm">
+        <div class="modal-header">
+          <h5 class="modal-title">Book Your Car</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="userName" class="form-control mb-2" placeholder="Your Name" required>
+          <input type="email" id="userEmail" class="form-control mb-2" placeholder="Email" required>
+          <input type="text" id="carName" class="form-control mb-2" placeholder="Car Name" readonly>
+          <input type="date" id="bookingStartDate" class="form-control mb-2" required>
+          <input type="date" id="bookingEndDate" class="form-control mb-2" required>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Confirm Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <p>&copy; 2025 RentACar | All rights reserved</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
